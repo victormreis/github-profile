@@ -1,11 +1,15 @@
-const Profile = () => {
-	return (
-		<div className="px-5 sm:px-28 md:px-28 lg:px-36 mt-5 text-[#CDD5E0]">
-			<h1 className="text-[3em]">Github</h1>
-			<p className="text-xl mt-3">How people build software</p>
+import RepositoryCard from "../stats/repositoryCard/repositoryCard";
 
-      <div>
-        repositorios.....
+const Profile = ({profile, repositories}) => {
+	return (
+		<div className="px-5 ml-3 lg:ml-60 md:ml-24 mt-5 text-[#CDD5E0] m-auto">
+			<h1 className="text-[3em]">{profile.name}</h1>
+			<p className="text-xl mt-3">{profile.bio}</p>
+
+      <div className="mt-10 m-auto grid grid-cols-1 md:grid-cols-2 gap-5">
+        {repositories.map((repository) => (
+          <RepositoryCard key={repository.id} repository={repository} />
+        ))}      
       </div>
 		</div>
 	);
