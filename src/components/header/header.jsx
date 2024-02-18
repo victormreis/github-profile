@@ -24,7 +24,7 @@ const Header = ({handleChangeInput, profile, setShouldShowRepos, getRepos}) => {
 	};
 	return (
 		<div className="h-72 w-full teste">
-			<div className="flex justify-center pt-10 text-[#4A5567]">
+			<div className="flex justify-center pt-10 pl-3 text-[#4A5567] ">
 				<IoMdSearch
 					size={22}
 					color=""
@@ -32,7 +32,7 @@ const Header = ({handleChangeInput, profile, setShouldShowRepos, getRepos}) => {
 				/>
 				<input
 					onChange={onTyping}
-					className="py-5 pl-11 w-2/5 rounded-md  bg-[#20293A] placeholder:text-[#4A5567] outline-none"
+					className="py-4 pl-11 sm:w-2/5 rounded-md  bg-[#20293A] placeholder:text-[#4A5567] outline-none"
 					type="text"
 					placeholder="Username"
           onKeyDown={(e) =>handleKeyPress(e)}
@@ -41,7 +41,7 @@ const Header = ({handleChangeInput, profile, setShouldShowRepos, getRepos}) => {
 			{shouldShowCard && profile && (
 				<div
 					onClick={selectedProfile}					
-					className="text-white m-auto w-2/5 flex items-center gap-2 mt-2 rounded-md bg-[#20293A] cursor-pointer">
+					className="text-white py-2 m-auto w-3/5 sm:w-2/5 flex items-center gap-2 mt-2 rounded-md bg-[#20293A] cursor-pointer">
 					<img
 						className="w-20 rounded-2xl p-2"
 						src={profile.avatar_url}
