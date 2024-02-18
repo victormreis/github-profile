@@ -2,7 +2,7 @@ import RepositoryCard from "../stats/repositoryCard/repositoryCard";
 
 const Profile = ({profile, repositories}) => {
 	return (
-		<div className="px-5 ml-3 lg:ml-60 md:ml-24 mt-5 text-[#CDD5E0] m-auto">
+		<div className="px-5 ml-3 md:ml-24 mt-5 text-[#CDD5E0] m-auto">
 			<h1 className="text-[3em]">{profile.name}</h1>
 			<p className="text-xl mt-3">{profile.bio}</p>
 

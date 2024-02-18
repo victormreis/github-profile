@@ -9,10 +9,10 @@ function App() {
 	const [username, setUsername] = useState("github");
 	const [repositories, setRepositories] = useState([]);
 	const [profile, setProfile] = useState([]);
-	const [debounceText] = useDebounce(username, 1500);
+	const [debounceText] = useDebounce(username, 1000);
 
 	useEffect(() => {
-    return
+    // return
 		fetch(`${APIURL}/users/${username}`)
 			.then((response) => response.json())
 			.then((data) => {
@@ -47,7 +47,8 @@ function App() {
 	return (
 		<>
 			<Header
-				handleChangeInput={handleChangeInput}				
+				handleChangeInput={handleChangeInput}	
+        profile={profile}			
 			/>
 
 			{profile ? (

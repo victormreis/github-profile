@@ -1,7 +1,8 @@
+import Card from "../card/card";
 import "./header.css";
 import {IoMdSearch} from "react-icons/io";
 
-const Header = ({handleChangeInput}) => {    
+const Header = ({handleChangeInput, profile}) => {    
 
 	return (
 		<div className="h-72 w-full teste">
@@ -13,8 +14,8 @@ const Header = ({handleChangeInput}) => {
 					type="text"                 
 					placeholder="Username"
           
-				/>
-			</div>
+				/>        
+			</div>    
 		</div>
 	);
 };
