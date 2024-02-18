@@ -1,8 +1,33 @@
-# React + Vite
+#  Github profile search
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+#### This app was created following the proposal design given from the devchallenges.io/
 
-Currently, two official plugins are available:
+![image](https://i.imgur.com/NisF8ww.png)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+
+
+## 🧪 Technologies
+
+- [React ](https://react.dev/)
+- [TypeScript](https://www.typescriptlang.org/)
+- [Tailwind](https://tailwindcss.com/)
+
+## 🚀 Getting started
+
+### Clone the application
+
+`$ git clone https://github.com/victormreis/github-profile.git`
+
+### Running the project
+
+- Enter each folder, use `npm install` to install all dependencies.
+
+- Run `npm run dev` to initialize the app
+
+## Other info
+
+- You can also visit the project trhough this [link](https://github-profile-chi-nine.vercel.app/)
+
+### Notes
+
+- This project was designed to practice my ReactJs and Tailwind skills.
