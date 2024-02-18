@@ -8,11 +8,12 @@ function App() {
 	const APIURL = "https://api.github.com";
 	const [username, setUsername] = useState("github");
 	const [repositories, setRepositories] = useState([]);
+	const [shouldShowRepos, setShouldShowRepos] = useState(true);
 	const [profile, setProfile] = useState([]);
-	const [debounceText] = useDebounce(username, 1000);
+	const [debounceText] = useDebounce(username, 500);
 
 	useEffect(() => {
-    // return
+		// return
 		fetch(`${APIURL}/users/${username}`)
 			.then((response) => response.json())
 			.then((data) => {
@@ -21,7 +22,7 @@ function App() {
 					return;
 				}
 				setProfile(data);
-				getRepos(data.repos_url);			
+				getRepos(data.repos_url);
 			})
 			.catch((error) => {
 				console.log(error);
@@ -47,12 +48,14 @@ function App() {
 	return (
 		<>
 			<Header
-				handleChangeInput={handleChangeInput}	
-        profile={profile}			
+				handleChangeInput={handleChangeInput}
+				getRepos={getRepos}
+				profile={profile}
+				setShouldShowRepos={setShouldShowRepos}
 			/>
 
-			{profile ? (
-				<>
+			{profile && setShouldShowRepos ? (
+				<div className={`${shouldShowRepos ? "" : "hidden"}`}>
 					<Section profile={profile} />
 					<Profile
 						repositories={repositories}
@@ -65,13 +68,13 @@ function App() {
 							View all repositories
 						</a>
 					</div>
-				</>
+				</div>
 			) : (
 				<div className="flex flex-col justify-center items-center mb-20 gap-3 mt-5 text-white">
-					<h1 className="text-3xl">Profile not Found</h1>
+					<h1 className="text-3xl">{`${username ? 'Profile not Found' : 'Type a name to find the profile'}`}</h1>
 					<img
 						src="https://freefrontend.com/assets/img/tailwind-404-page-templates/404-page-not-found.png"
-						className="w-2/5"
+						className={`${!username ? 'hidden' : "w-2/5"}`}
 						alt=""
 					/>
 				</div>
